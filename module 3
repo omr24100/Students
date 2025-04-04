@@ -1,0 +1,19 @@
+#ifndef STUDENTS_H
+#define STUDENTS_H
+
+#include <vector>
+#include <string>
+
+
+int getNumStudents();
+
+
+void readNames(int numStudents, std::vector<std::string>& studentNames);
+
+
+void sortNames(std::vector<std::string>& studentNames);
+
+
+void displayFrontAndEnd(const std::vector<std::string>& studentNames);
+
+#endif
