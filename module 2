@@ -1,0 +1,40 @@
+#include "students.h"
+#include <iostream>
+#include <algorithm>  // For sorting
+
+using namespace std;
+
+
+int getNumStudents() {
+    int numStudents;
+   
+    do {
+        cout << "Enter the number of students (1-25): ";
+        cin >> numStudents;
+        if (numStudents < 1 || numStudents > 25) {
+            cout << "Please enter a number between 1 and 25." << endl;
+        }
+    } while (numStudents < 1 || numStudents > 25);
+    
+    return numStudents;
+}
+
+
+void readNames(int numStudents, vector<string>& studentNames) {
+    cout << "Enter the names of the students:" << endl;
+    for (int i = 0; i < numStudents; i++) {
+        cout << "Student " << i + 1 << ": ";
+        cin >> studentNames[i];
+    }
+}
+
+
+void sortNames(vector<string>& studentNames) {
+    sort(studentNames.begin(), studentNames.end());
+}
+
+
+void displayFrontAndEnd(const vector<string>& studentNames) {
+    cout << "\nThe student at the front of the line (alphabetically) is: " << studentNames[0] << endl;
+    cout << "The student at the end of the line (alphabetically) is: " << studentNames[studentNames.size() - 1] << endl;
+}
